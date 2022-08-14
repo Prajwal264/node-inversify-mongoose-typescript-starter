@@ -5,21 +5,20 @@ Starter template for bootstrapping a Node server with Inversify, Mongoose, Types
 
 
 
-
 ## Installation
 
-Install `node-inversify-mongoose-typescript-starter` with npm
+Install `nimt` with npm
 
-    1. npm i -g node-inversify-mongoose-typescript-starter
-    2. node-inversify-mongoose-typescript-starter new `projectname`
+    1. npm i -g nimt
+    2. nimt new `projectname`
     3. cd `projectname`
     4. npm install // in project root directory
     5. npm run watch // to start typescript watcher
     6. npm start // to start the server
 
-Install `node-inversify-mongoose-typescript-starter` with npx
+Install `nimt` with npx
 
-    1. npx node-inversify-mongoose-typescript-starter new `projectname`
+    1. npx nimt new `projectname`
     2. cd `projectname`
     3. npm install // in project root directory
     4. npm run watch // to start typescript watcher

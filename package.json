@@ -1,6 +1,6 @@
 {
-  "name": "node-inversify-mongoose-typescript-starter",
-  "version": "1.0.0",
+  "name": "nimt",
+  "version": "1.0.1",
   "description": "a simple starter for node-typescript projects",
   "main": "index.js",
   "bin": "lib/index.js",
