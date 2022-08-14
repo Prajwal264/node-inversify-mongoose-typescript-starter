@@ -1,5 +1,5 @@
 {
-  "name": "typegraphql-typeorm-starter",
+  "name": "node-inversify-mongoose-typescript-starter",
   "version": "1.0.0",
   "description": "a simple starter for node-typescript projects",
   "main": "index.js",
