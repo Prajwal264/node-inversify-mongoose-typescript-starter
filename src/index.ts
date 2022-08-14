@@ -1,101 +1,22 @@
-import express, { Application } from 'express';
+#!/usr/bin/env node
+import program from 'commander';
 
-/**
- *
- *
- * @class Server
- */
-class Server {
-  /**
-   *
-   *
-   * @private
-   * @type {(string | number)}
-   * @memberof Server
-   */
-  private port: string | number;
+import { CreateCommand } from './commands/create';
 
-  /**
-   *
-   *
-   * @private
-   * @type {Application}
-   * @memberof Server
-   */
-  private app: Application;
+program
+    .name('typegraphql-typeorm-starter')
+    .version('1.0.2');
 
-  /**
-   *
-   *
-   * @memberof Server
-   */
-  public async init() {
-    this.confgure();
-    await this.setup();
-    this.listen();
-  }
-
-  /**
-   *
-   *
-   * @private
-   * @memberof Server
-   */
-  private confgure() {
-    this.configurePort();
-  }
-
-  /**
-   *
-   *
-   * @private
-   * @memberof Server
-   */
-  private configurePort() {
-    this.port = process.env.PORT || 4000;
-  }
-
-  /**
-   *
-   *
-   * @private
-   * @memberof Server
-   */
-  private async setup() {
-    this.createExpressApplication();
-  }
-
-  /**
-   *
-   *
-   * @private
-   * @memberof Server
-   */
-  private createExpressApplication() {
-    this.app = express();
-  }
-
-  /**
-   *
-   *
-   * @private
-   * @memberof Server
-   */
-  private listen() {
-    const { port } = this;
-    this.app.listen(port, () => {
-      console.log(`Server is running at ${port}`);
+program
+    .command('new <name>')
+    .description('Creates a new typegraphql-typeorm starter package')
+    .action((name: string) => {
+        const command = new CreateCommand();
+        command.execute(name);
     });
-  }
+
+if (!process.argv.slice(2).length) {
+    program.outputHelp();
 }
 
-/**
- *
- *
- */
-const bootstrap = async () => {
-  const server = new Server();
-  server.init();
-};
-
-bootstrap();
+program.parse(process.argv);

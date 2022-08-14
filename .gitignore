@@ -1,6 +1,5 @@
 node_modules
-# dist
-ormconfig.json
-.env
-uploads
+lib
 dist
+source/dist
+source/node_modules
