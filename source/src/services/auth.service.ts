@@ -1,6 +1,6 @@
 import { compare, hash } from 'bcrypt';
 import { injectable } from 'inversify';
-import { nanoid } from 'nanoid';
+import { generate } from 'shortid';
 import { createAccessToken, createRefreshToken, verifyRefreshToken } from '../helpers/token.helper';
 import { IUser, User } from '../models/user.model';
 
@@ -35,7 +35,7 @@ export class AuthService {
       throw new Error('User already exists');
     }
     const hashedPassword = await this.hashPassword(password);
-    const userId = `user_${nanoid()}`;
+    const userId = `user_${generate()}`;
     const user = await User.create({
       userId,
       email,
