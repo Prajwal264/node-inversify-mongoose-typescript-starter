@@ -1,6 +1,6 @@
 {
   "name": "nimt",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a simple starter for node-typescript projects",
   "main": "index.js",
   "bin": "lib/index.js",
